@@ -33,7 +33,7 @@ class Question{
     const sql = "SELECT * FROM questions WHERE id = ?"
     return new Promise(function(resolve){
       db.get(sql, [id], function(err, result){
-        const question = new Question(result.content)
+        const question = new Question()
         question.id = result.id
         question.result = result.content
         resolve(question)
